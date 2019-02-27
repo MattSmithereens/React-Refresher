@@ -1,0 +1,17 @@
+:root {
+  --mdc-theme-primary: #04521c; /* changest main button color */
+  --mdc-theme-secondary: #666666; /* changes color of radio buttons */
+}
+
+
+html, body {
+  font-family: sans-serif;
+  margin-left: 10;
+  width: 80%;
+  background-color: #87a38d; 
+}
+
+button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
