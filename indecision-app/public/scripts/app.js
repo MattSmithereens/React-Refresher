@@ -112,15 +112,20 @@ var Action = function (_React$Component3) {
 var Options = function (_React$Component4) {
   _inherits(Options, _React$Component4);
 
-  function Options() {
+  // fix/bind broken "this" keyword.  
+  //Passing props same as calling this.props
+  function Options(props) {
     _classCallCheck(this, Options);
 
-    return _possibleConstructorReturn(this, (Options.__proto__ || Object.getPrototypeOf(Options)).apply(this, arguments));
+    var _this4 = _possibleConstructorReturn(this, (Options.__proto__ || Object.getPrototypeOf(Options)).call(this, props));
+
+    _this4.handleRemoveAll = _this4.handleRemoveAll.bind(_this4);
+    return _this4;
   }
 
   _createClass(Options, [{
-    key: 'removeAll',
-    value: function removeAll() {
+    key: 'handleRemoveAll',
+    value: function handleRemoveAll() {
       alert('remove all clicked');
     }
   }, {
@@ -136,7 +141,7 @@ var Options = function (_React$Component4) {
           }),
           React.createElement(
             'button',
-            { onClick: this.removeAll, 'class': 'mdc-button mdc-button--unelevated' },
+            { onClick: this.handleRemoveAll, 'class': 'mdc-button mdc-button--unelevated' },
             React.createElement(
               'span',
               { 'class': 'mdc-button__label' },

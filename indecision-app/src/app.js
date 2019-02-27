@@ -44,7 +44,14 @@ class Action extends React.Component {
 }
 
 class Options extends React.Component {
-  removeAll() {
+  // fix/bind broken "this" keyword.  
+  //Passing props same as calling this.props
+  constructor(props) {
+    super(props);
+    this.handleRemoveAll = this.handleRemoveAll.bind(this);
+  }
+
+  handleRemoveAll() {
     alert('remove all clicked');
   }
 
@@ -53,7 +60,7 @@ class Options extends React.Component {
       // passing in "option" props and creating a custom key (optionText)
       <div>
         {this.props.options.map((option) => <Option key={option} optionText={option} />)}
-        <button onClick={this.removeAll} class="mdc-button mdc-button--unelevated">
+        <button onClick={this.handleRemoveAll} class="mdc-button mdc-button--unelevated">
           <span class="mdc-button__label">remove all</span>
         </button>
       </div>
