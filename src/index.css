@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #87a38d; 
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -11,4 +12,22 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+:root {
+  --mdc-theme-primary: #04521c; /* changest main button color */
+  --mdc-theme-secondary: #666666; /* changes color of radio buttons */
+}
+
+button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.padding40 {
+  padding: 40px;
+}
+
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) {
+  background-color: #f0ffe8;
 }

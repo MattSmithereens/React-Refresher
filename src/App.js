@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
 import AddOption from './components/AddOption.js';
 import Options from './components/Options.js';
 import Header from './components/Header.js';
 import Action from './components/Action.js';
+import OptionModal from './components/OptionModal.js';
 
 class IndecisionApp extends React.Component {
   constructor(props) {
@@ -13,7 +13,8 @@ class IndecisionApp extends React.Component {
     this.handleAddOption = this.handleAddOption.bind(this);
     this.handleDeleteOption = this.handleDeleteOption.bind(this);
     this.state = {
-      options: props.options
+      options: props.options,
+      selectedOption: undefined
     };
   }
 
@@ -45,13 +46,21 @@ class IndecisionApp extends React.Component {
     console.log('compoinent will unmount');
   }
 
-  handlePick() {
-    this.setState(() => {
-      const randomNum = Math.floor(Math.random() * this.state.options.length);
-      const option = this.state.options[randomNum];
-      alert(option);
-    })
-  }
+  handlePick = () => {
+    const randomNum = Math.floor(Math.random() * this.state.options.length);
+    const option = this.state.options[randomNum];
+    this.setState(() => ({
+      selectedOption: option
+    }));
+  };
+
+  // handlePick() {
+  //   const randomNum = Math.floor(Math.random() * this.state.options.length);
+  //   const option = this.state.options[randomNum];
+  //   this.setState(() => ({
+  //     selectedOption: option
+  //   }));
+  // };
 
   // shorthand arrow function implicitly returning object
   handleDeleteOptions() { this.setState(() => ({ options: [] })) }
@@ -100,6 +109,9 @@ class IndecisionApp extends React.Component {
         />
         <AddOption
           handleAddOption={this.handleAddOption}
+        />
+        <OptionModal
+          selectedOption={this.state.selectedOption}
         />
       </div>
     )
