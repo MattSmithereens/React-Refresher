@@ -1,3 +1,9 @@
+## React Refresher?
+
+I've spent the last couple of months trying to raise a tiny human and now that I'm back at the coding thing. It seemed a good time and idea to do some refresher courses.
+
+The following is a loose-ish following along to [Andrew Mead's Indecision App](https://github.com/andrewjmead/react-course-2-indecision-app) from his Udemy React/Redux course.  So far, it's gotten me back up to speed as well as taught me a few things that I either missed, or just wasn't taught or able to absorb during bootcamp experience.  I recommend checking it out if you're in a similar position.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
